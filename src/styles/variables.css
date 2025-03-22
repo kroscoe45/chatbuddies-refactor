@@ -1,0 +1,32 @@
+:root {
+    /* Background Colors */
+    --background-gradient-start: #44617B;
+    --background-gradient-middle: #82727A;
+    --background-gradient-end: hsl(208, 29%, 37%);
+    --background-color: #C6A89B;
+    --header-background-start: rgba(172, 151, 144, 0.6);
+    --header-background-end: rgba(127, 112, 124, 0.5);
+
+    /* Text Colors */
+    --text-color: #D7A089;
+    --label-color: #ebebeb;
+    --input-text-color: #82727A;
+    --link-color: #44617B;
+
+    /* Button Colors */
+    --button-background: #BC9B8F;
+    --button-hover-background: #82727A;
+    --button-text-color: #fff;
+    --cancel-button-background: #BC9B8F;
+    --cancel-button-hover-background: #82727A;
+
+    /* Chat Box Colors */
+    --user-chat-box-background: #82727A;
+    --user-chat-box-text: #82727A;
+    --bot-chat-box-background: #BC9B8F;
+    --bot-chat-box-text: #BC9B8F;
+
+    /* Box Colors */
+    --box-background: #C6A89B;
+    --box-border: #523C3A;
+}

@@ -1,0 +1,39 @@
+/* Chat Boxes */
+.user-chat-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-self: flex-start;
+    padding: 10px;
+    background-color: var(--user-chat-box-background);
+    color: var(--user-chat-box-text);
+    border-radius: 10px;
+    max-width: 70%;
+    margin-bottom: 10px;
+}
+
+.bot-chat-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    align-self: flex-end;
+    padding: 10px;
+    background-color: var(--bot-chat-box-background);
+    color: var(--bot-chat-box-text);
+    border-radius: 10px;
+    max-width: 70%;
+    margin-bottom: 10px;
+}
+
+/* Forms */
+input[type="username"], input[type="password"], input[type="email"], input[type="tel"] {
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 2px;
+    font-size: 16px;
+    color: var(--input-text-color);
+    box-shadow: 0 0 2px 0 rgba(0,0,0,0.75);
+}

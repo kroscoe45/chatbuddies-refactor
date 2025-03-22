@@ -1,0 +1,48 @@
+.saveable-form {
+    width: 100%;
+    max-width: 600px;
+}
+
+.form-row {
+    margin-bottom: 20px;
+}
+
+.save-button {
+    background-color: var(--button-background, #1890ff);
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s;
+    margin-top: 10px;
+}
+
+.save-button:hover {
+    background-color: var(--button-hover-background, #40a9ff);
+}
+
+.save-button:disabled {
+    background-color: #d9d9d9;
+    cursor: not-allowed;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.form-header {
+    margin-bottom: 20px;
+}
+
+.form-header h3 {
+    margin-bottom: 8px;
+}
+
+.form-header p {
+    color: var(--text-color, #666);
+    font-size: 0.9rem;
+}
