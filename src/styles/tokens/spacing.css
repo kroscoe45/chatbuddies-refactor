@@ -1,0 +1,80 @@
+/* /styles/tokens/spacing.css
+ * Spacing token variables for the application.
+ * Creates a consistent spacing scale for margins, padding,
+ * gaps, and other spatial relationships.
+ */
+
+:root {
+    /* Base spacing unit */
+    --space-unit: 4px;
+
+    /* Spacing scale */
+    --space-0: 0;
+    --space-xs: calc(var(--space-unit) * 1); /* 4px */
+    --space-sm: calc(var(--space-unit) * 2); /* 8px */
+    --space-md: calc(var(--space-unit) * 4); /* 16px */
+    --space-lg: calc(var(--space-unit) * 6); /* 24px */
+    --space-xl: calc(var(--space-unit) * 8); /* 32px */
+    --space-2xl: calc(var(--space-unit) * 12); /* 48px */
+    --space-3xl: calc(var(--space-unit) * 16); /* 64px */
+    --space-4xl: calc(var(--space-unit) * 24); /* 96px */
+
+    /* Common component spacing values */
+    --space-form-element-gap: var(--space-md);
+    --space-section-gap: var(--space-2xl);
+    --space-card-padding: var(--space-md);
+    --space-inline-element-gap: var(--space-xs);
+    --space-button-padding-x: var(--space-md);
+    --space-button-padding-y: var(--space-xs);
+
+    /* Layout spacing */
+    --layout-container-padding: var(--space-md);
+    --layout-container-padding-mobile: var(--space-sm);
+    --layout-content-max-width: 1200px;
+    --layout-sidebar-width: 240px;
+    --layout-sidebar-collapsed-width: 64px;
+    --layout-header-height: 64px;
+    --layout-footer-height: 60px;
+
+    /* Grid and flex layout gaps */
+    --layout-grid-gap: var(--space-md);
+    --layout-flex-gap: var(--space-sm);
+
+    /* Z-index scale */
+    --z-index-dropdown: 1000;
+    --z-index-sticky: 1100;
+    --z-index-fixed: 1200;
+    --z-index-modal-backdrop: 1300;
+    --z-index-modal: 1400;
+    --z-index-popover: 1500;
+    --z-index-tooltip: 1600;
+
+    /* Common border and shape properties */
+    --border-width-thin: 1px;
+    --border-width-medium: 2px;
+    --border-width-thick: 4px;
+
+    --border-radius-none: 0;
+    --border-radius-sm: 2px;
+    --border-radius-md: 4px;
+    --border-radius-lg: 8px;
+    --border-radius-xl: 12px;
+    --border-radius-full: 9999px;
+
+    /* Shadow sizes */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/*
+ * Responsive spacing adjustments
+ * Adjust spacing for different viewport sizes if needed
+ */
+@media (max-width: 768px) {
+    :root {
+        --layout-container-padding: var(--layout-container-padding-mobile);
+        --space-section-gap: var(--space-xl);
+    }
+}

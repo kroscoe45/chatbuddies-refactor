@@ -1,0 +1,44 @@
+/*
+ * Main stylesheet entry point
+ * This file imports all CSS files in the proper cascade order
+ */
+
+/*
+ * Base styles - First reset browsers defaults, then apply global styles
+ * These styles create our foundation
+ */
+@import './base/reset.css';
+@import './base/global.css';
+
+/*
+ * Design tokens - Variables for colors, typography, spacing, etc.
+ * These get used by both shared and component-specific styles
+ */
+@import './tokens/colors.css';
+@import './tokens/typography.css';
+@import './tokens/spacing.css';
+@import './tokens/breakpoints.css';
+
+/*
+ * Shared styles - Common styles used across multiple components
+ * These build on our foundation and tokens
+ */
+@import './shared/animations.css';
+@import './shared/forms.css';
+@import './shared/layout.css'; /* If you create this file later */
+
+/*
+ * Component styles will be imported directly from the components themselves
+ * This approach allows components to be self-contained and modular
+ */
+
+/*
+ * Note on CSS import order:
+ * 1. Reset and global styles first (establish baseline)
+ * 2. Design tokens (make variables available)
+ * 3. Shared elements (common patterns)
+ * 4. Component styles (specific UI elements)
+ *
+ * With React, component styles are typically imported within the component files,
+ * but you can add additional component style imports here if preferred.
+ */

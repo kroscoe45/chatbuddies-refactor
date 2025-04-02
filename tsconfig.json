@@ -37,9 +37,6 @@
       ],
       "@pages/*": [
         "src/pages/*"
-      ],
-      "@components/*": [
-        "src/components/*"
       ]
     }
   },

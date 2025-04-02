@@ -1,0 +1,1 @@
+export { PlatformsView } from './PlatformsView';

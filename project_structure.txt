@@ -150,9 +150,9 @@ chatbuddies-refactor/
                     └── ResourcesView/
                         └── index.ts
                         └── ResourcesView.tsx
-                    └── SettingsView/
+                    └── PlatformConfigurationsView/
                         └── index.ts
-                        └── SettingsView.tsx
+                        └── PlatformConfigurationsView.tsx
                     └── views.css
             └── Home/
             └── index.ts

@@ -1,61 +1,128 @@
-/* Updated TextInput.css */
 .input-container {
-    margin-bottom: 16px;
     position: relative;
+    margin-bottom: 16px;
+    width: 100%;
 }
 
 .input-field {
     position: relative;
-    background-color: white;
-    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    transition: all 0.2s ease;
 }
 
 .custom-input {
     width: 100%;
-    padding: 16px;
-    border: 1px solid #d9d9d9;
+    padding: 12px 16px;
+    border: 1px solid var(--border-color, #d9d9d9);
     border-radius: 4px;
     font-size: 14px;
+    line-height: 1.5;
     transition: all 0.2s ease;
     background-color: white;
     color: var(--input-text-color, #333);
 }
 
-.custom-input:hover {
-    border-color: #b9b9b9;
+.input-field.has-start-icon .custom-input {
+    padding-left: 40px;
 }
 
-.input-field.active .custom-input {
-    border-color: var(--button-background, #1890ff);
+.input-field.has-end-icon .custom-input {
+    padding-right: 40px;
+}
+
+.input-icon {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--icon-color, #666);
+    height: 100%;
+    width: 40px;
+    pointer-events: none;
+}
+
+.input-icon-start {
+    left: 0;
+}
+
+.input-icon-end {
+    right: 0;
+}
+
+.custom-input:hover {
+    border-color: var(--border-hover-color, #b9b9b9);
+}
+
+.input-field.focused .custom-input {
+    border-color: var(--primary-color, #1890ff);
+    box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
 }
 
 .input-field.error .custom-input {
-    border-color: #ff4d4f;
+    border-color: var(--error-color, #ff4d4f);
 }
 
-.floating-label {
+.input-field.error.focused .custom-input {
+    box-shadow: 0 0 0 2px rgba(255, 77, 79, 0.2);
+}
+
+.input-field.disabled .custom-input {
+    background-color: var(--disabled-bg-color, #f5f5f5);
+    border-color: var(--disabled-border-color, #d9d9d9);
+    color: var(--disabled-text-color, #bfbfbf);
+    cursor: not-allowed;
+}
+
+.input-label {
     position: absolute;
-    left: 16px;
+    left: 12px;
     top: 50%;
     transform: translateY(-50%);
+    background-color: white;
+    padding: 0 4px;
     font-size: 14px;
-    color: #666;
+    color: var(--label-color, #666);
     pointer-events: none;
     transition: all 0.2s ease;
 }
 
-.input-field.active .floating-label {
-    top: 0;
-    left: 10px;
+.input-field.focused .input-label,
+.input-field.has-value .input-label {
+    top: -2px;
     font-size: 12px;
-    color: var(--button-background, #1890ff);
+    color: var(--focused-label-color, #1890ff);
     transform: translateY(-50%);
-    background-color: white;
-    padding: 0 4px;
+}
+
+.input-field.error .input-label {
+    color: var(--error-color, #ff4d4f);
+}
+
+.input-label[data-required="true"]::after {
+    content: "*";
+    color: var(--error-color, #ff4d4f);
+    margin-left: 2px;
+}
+
+.input-description {
+    font-size: 12px;
+    margin-top: 4px;
+    color: var(--helper-text-color, #666);
 }
 
 .error-message {
-    color: #ff4d4f;
-    font-size: 0.8rem;
-    margin-top: 4px;
+    color: var(--error-color, #ff4d4f);
+}
+
+/* Size variants */
+.input-small .custom-input {
+    padding: 8px 12px;
+    font-size: 12px;
+}
+
+.input-large .custom-input {
+    padding: 16px 20px;
+    font-size: 16px;
 }

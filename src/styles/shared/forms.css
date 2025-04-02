@@ -1,0 +1,263 @@
+/* /styles/shared/forms.css
+ * Shared base styles for form elements.
+ * These styles provide a foundation for form components.
+ */
+
+/* Form layouts and containers */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg, 24px);
+    width: 100%;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs, 4px);
+    margin-bottom: var(--space-md, 16px);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: var(--space-md, 16px);
+}
+
+.form-field {
+    margin-bottom: var(--space-md, 16px);
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-start;
+    gap: var(--space-md, 16px);
+    margin-top: var(--space-lg, 24px);
+}
+
+/* Form layout variations */
+.form-horizontal .form-row {
+    flex-direction: row;
+    align-items: center;
+}
+
+.form-horizontal .form-label {
+    width: 30%;
+    margin-bottom: 0;
+    padding-right: var(--space-md, 16px);
+}
+
+.form-horizontal .form-field-wrapper {
+    width: 70%;
+}
+
+/* Labels */
+.form-label {
+    display: block;
+    margin-bottom: var(--space-xs, 4px);
+    font-size: var(--font-size-sm, 0.875rem);
+    font-weight: var(--font-weight-medium, 500);
+    color: var(--color-text-secondary, #666);
+}
+
+.form-label.required::after {
+    content: "*";
+    margin-left: var(--space-xs, 4px);
+    color: var(--color-error, #ff4d4f);
+}
+
+/* Basic input styling */
+.form-input,
+.form-select,
+.form-textarea {
+    width: 100%;
+    padding: var(--space-sm, 8px) var(--space-md, 16px);
+    font-size: var(--font-size-md, 1rem);
+    line-height: 1.5;
+    color: var(--color-text-primary, #333);
+    background-color: var(--color-input-bg, #fff);
+    border: 1px solid var(--color-input-border, #d9d9d9);
+    border-radius: var(--border-radius-md, 4px);
+    transition: all 0.3s;
+}
+
+.form-textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+/* Input states */
+.form-input:hover,
+.form-select:hover,
+.form-textarea:hover {
+    border-color: var(--color-input-border-hover, #40a9ff);
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+    border-color: var(--color-input-border-focus, #1890ff);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+}
+
+.form-input.error,
+.form-select.error,
+.form-textarea.error {
+    border-color: var(--color-error, #ff4d4f);
+}
+
+.form-input.error:focus,
+.form-select.error:focus,
+.form-textarea.error:focus {
+    box-shadow: 0 0 0 2px rgba(255, 77, 79, 0.2);
+}
+
+.form-input:disabled,
+.form-select:disabled,
+.form-textarea:disabled {
+    background-color: var(--color-bg-disabled, #f5f5f5);
+    border-color: var(--color-border, #d9d9d9);
+    color: var(--color-text-disabled, #ccc);
+    cursor: not-allowed;
+}
+
+/* Placeholders */
+.form-input::placeholder,
+.form-textarea::placeholder {
+    color: var(--color-input-placeholder, #ccc);
+    opacity: 1;
+}
+
+/* Helper text and errors */
+.form-helper {
+    margin-top: var(--space-xs, 4px);
+    font-size: var(--font-size-xs, 0.75rem);
+    color: var(--color-text-tertiary, #999);
+}
+
+.form-error {
+    margin-top: var(--space-xs, 4px);
+    font-size: var(--font-size-xs, 0.75rem);
+    color: var(--color-error, #ff4d4f);
+}
+
+/* Checkboxes and radio buttons */
+.form-checkbox,
+.form-radio {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs, 4px);
+    margin-bottom: var(--space-xs, 4px);
+    cursor: pointer;
+}
+
+.form-checkbox input[type="checkbox"],
+.form-radio input[type="radio"] {
+    margin-right: var(--space-xs, 4px);
+}
+
+.checkbox-group,
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm, 8px);
+}
+
+.checkbox-group.horizontal,
+.radio-group.horizontal {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--space-md, 16px);
+}
+
+/* Form sections and fieldsets */
+.form-section {
+    margin-bottom: var(--space-xl, 32px);
+}
+
+.form-section-title {
+    margin-bottom: var(--space-md, 16px);
+    font-size: var(--font-size-lg, 1.125rem);
+    font-weight: var(--font-weight-semibold, 600);
+    color: var(--color-text-primary, #333);
+}
+
+.form-fieldset {
+    margin: 0 0 var(--space-lg, 24px) 0;
+    padding: 0;
+    border: none;
+}
+
+.form-legend {
+    width: 100%;
+    margin-bottom: var(--space-md, 16px);
+    padding-bottom: var(--space-xs, 4px);
+    font-size: var(--font-size-lg, 1.125rem);
+    font-weight: var(--font-weight-semibold, 600);
+    border-bottom: 1px solid var(--color-border-light, #f0f0f0);
+}
+
+/* Form validation styles */
+.is-valid .form-input,
+.is-valid .form-select,
+.is-valid .form-textarea {
+    border-color: var(--color-success, #52c41a);
+}
+
+.is-valid .form-input:focus,
+.is-valid .form-select:focus,
+.is-valid .form-textarea:focus {
+    box-shadow: 0 0 0 2px rgba(82, 196, 26, 0.2);
+}
+
+.is-invalid .form-input,
+.is-invalid .form-select,
+.is-invalid .form-textarea {
+    border-color: var(--color-error, #ff4d4f);
+}
+
+.is-invalid .form-input:focus,
+.is-invalid .form-select:focus,
+.is-invalid .form-textarea:focus {
+    box-shadow: 0 0 0 2px rgba(255, 77, 79, 0.2);
+}
+
+/* Input sizing variants */
+.form-input-sm,
+.form-select-sm {
+    padding: var(--space-xs, 4px) var(--space-sm, 8px);
+    font-size: var(--font-size-sm, 0.875rem);
+}
+
+.form-input-lg,
+.form-select-lg {
+    padding: var(--space-md, 16px);
+    font-size: var(--font-size-lg, 1.125rem);
+}
+
+/* Responsive form layout */
+@media (max-width: 768px) {
+    .form-horizontal .form-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .form-horizontal .form-label,
+    .form-horizontal .form-field-wrapper {
+        width: 100%;
+    }
+
+    .form-horizontal .form-label {
+        margin-bottom: var(--space-xs, 4px);
+        padding-right: 0;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .form-actions button {
+        width: 100%;
+    }
+}

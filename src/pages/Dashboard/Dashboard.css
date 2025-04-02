@@ -1,15 +1,15 @@
-/* src/pages/Dashboard/Dashboard.css */
 .dashboard-container {
     display: flex;
     height: 100vh;
     overflow: hidden;
     position: relative;
+    background-color: #f8f9fa;
 }
 
 .dashboard-content {
     flex: 1;
-    padding: 20px 20px 20px 70px; /* Left padding accounts for collapsed sidebar */
-    background-color: #f5f5f5;
+    margin-left: 220px; /* Account for fixed sidebar width + margins */
+    padding: 20px;
     overflow-y: auto;
-    width: 100%;
+    width: calc(100% - 220px); /* Adjust width for sidebar */
 }

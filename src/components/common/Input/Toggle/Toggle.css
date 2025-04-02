@@ -1,0 +1,154 @@
+:root {
+    --toggle-active-color: #3B82F6;
+    --toggle-inactive-color: #9CA3AF;
+    --toggle-thumb-color: #FFFFFF;
+    --toggle-active-text: #FFFFFF;
+    --toggle-inactive-text: #E5E7EB;
+    --toggle-disabled-opacity: 0.6;
+}
+
+/* Container for toggle and label */
+.toggle-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Main toggle component */
+.toggle {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-radius: 9999px;
+    cursor: pointer;
+    padding: 0;
+    border: none;
+    outline: none;
+    overflow: hidden;
+    transition: background-color 0.3s ease-out, transform 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+
+/* Toggle sizes */
+.toggle--small {
+    width: 50px;
+    height: 24px;
+}
+
+.toggle--medium {
+    width: 60px;
+    height: 30px;
+}
+
+.toggle--large {
+    width: 70px;
+    height: 36px;
+}
+
+/* Toggle states */
+.toggle--active {
+    background-color: var(--toggle-active-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.toggle--inactive {
+    background-color: var(--toggle-inactive-color);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.toggle--disabled {
+    opacity: var(--toggle-disabled-opacity);
+    cursor: not-allowed;
+}
+
+/* Toggle track */
+.toggle__track {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    padding: 0 8px;
+    transition: opacity 0.3s ease-out;
+}
+
+/* Toggle thumb slider */
+.toggle__thumb {
+    position: absolute;
+    background-color: var(--toggle-thumb-color);
+    border-radius: 50%;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease-out;
+}
+
+/* Thumb sizes */
+.toggle--small .toggle__thumb {
+    width: 18px;
+    height: 18px;
+    top: 3px;
+    left: 3px;
+}
+
+.toggle--medium .toggle__thumb {
+    width: 22px;
+    height: 22px;
+    top: 4px;
+    left: 4px;
+}
+
+.toggle--large .toggle__thumb {
+    width: 28px;
+    height: 28px;
+    top: 4px;
+    left: 4px;
+}
+
+/* Thumb positions */
+.toggle--active.toggle--small .toggle__thumb {
+    transform: translateX(26px);
+}
+
+.toggle--active.toggle--medium .toggle__thumb {
+    transform: translateX(30px);
+}
+
+.toggle--active.toggle--large .toggle__thumb {
+    transform: translateX(34px);
+}
+
+.toggle--inactive .toggle__thumb {
+    transform: translateX(0);
+}
+
+/* Label styling */
+.toggle__label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.toggle__label.toggle--disabled {
+    cursor: not-allowed;
+}
+
+/* Focus styles */
+.toggle:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.4);
+}
+
+/* Hover effects */
+.toggle:not(.toggle--disabled):hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+/* Animation for button press */
+.toggle:not(.toggle--disabled):active {
+    transform: scale(0.97);
+}
+
+/* Small animation for the thumb on state change */
+.toggle--active .toggle__thumb {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+}

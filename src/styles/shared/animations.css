@@ -1,0 +1,334 @@
+/* /styles/shared/animations.css
+ * Reusable animations and transitions for the application.
+ * Defines keyframes and utility classes for common animation patterns.
+ */
+
+/* Animation durations */
+:root {
+    --animation-duration-fast: 0.15s;
+    --animation-duration-normal: 0.3s;
+    --animation-duration-slow: 0.5s;
+
+    /* Timing functions */
+    --timing-ease: ease;
+    --timing-ease-in: ease-in;
+    --timing-ease-out: ease-out;
+    --timing-ease-in-out: ease-in-out;
+    --timing-linear: linear;
+
+    /* Custom bezier curves */
+    --timing-bounce: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    --timing-smooth: cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+
+/* Fade animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+/* Fade up animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOutUp {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+/* Fade down animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOutDown {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+}
+
+/* Scale animations */
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes scaleOut {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+}
+
+/* Spin animation */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Pulse animation */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Shake animation */
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        transform: translateX(-5px);
+    }
+    20%, 40%, 60%, 80% {
+        transform: translateX(5px);
+    }
+}
+
+/* Slide animations */
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOutLeft {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOutRight {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(100%);
+    }
+}
+
+/* Bounce animation */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Loading animations */
+@keyframes loadingDots {
+    0%, 80%, 100% {
+        opacity: 0;
+    }
+    40% {
+        opacity: 1;
+    }
+}
+
+@keyframes loadingPulse {
+    0% {
+        transform: scale(0.8);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(1.2);
+        opacity: 0;
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+/* Animation utility classes */
+.animate-fade-in {
+    animation: fadeIn var(--animation-duration-normal) var(--timing-ease-in-out);
+}
+
+.animate-fade-out {
+    animation: fadeOut var(--animation-duration-normal) var(--timing-ease-in-out);
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp var(--animation-duration-normal) var(--timing-ease-out);
+}
+
+.animate-scale-in {
+    animation: scaleIn var(--animation-duration-normal) var(--timing-bounce);
+}
+
+.animate-spin {
+    animation: spin 1s linear infinite;
+}
+
+.animate-pulse {
+    animation: pulse 2s infinite var(--timing-ease-in-out);
+}
+
+.animate-shake {
+    animation: shake 0.5s var(--timing-ease-in-out);
+}
+
+.animate-bounce {
+    animation: bounce 2s infinite;
+}
+
+/* Transition classes */
+.transition-all {
+    transition: all var(--animation-duration-normal) var(--timing-ease);
+}
+
+.transition-transform {
+    transition: transform var(--animation-duration-normal) var(--timing-ease);
+}
+
+.transition-opacity {
+    transition: opacity var(--animation-duration-normal) var(--timing-ease);
+}
+
+.transition-colors {
+    transition: color var(--animation-duration-normal) var(--timing-ease),
+    background-color var(--animation-duration-normal) var(--timing-ease),
+    border-color var(--animation-duration-normal) var(--timing-ease);
+}
+
+/* Hover transition effects */
+.hover-scale:hover {
+    transform: scale(1.05);
+}
+
+.hover-lift:hover {
+    transform: translateY(-2px);
+}
+
+/* Loading indicators */
+.loading-spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-top-color: var(--color-primary, #1890ff);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+.loading-dots {
+    display: inline-flex;
+    align-items: center;
+}
+
+.loading-dots::after {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: currentColor;
+    animation: loadingDots 1.4s infinite ease-in-out;
+    margin-left: 4px;
+}
+
+.loading-dots::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: currentColor;
+    animation: loadingDots 1.4s infinite ease-in-out -0.32s;
+    margin-right: 4px;
+}
+
+.loading-shimmer {
+    background: linear-gradient(
+            to right,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.5) 50%,
+            rgba(255, 255, 255, 0) 100%
+    );
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite linear;
+}

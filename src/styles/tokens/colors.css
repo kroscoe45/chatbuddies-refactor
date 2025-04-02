@@ -1,0 +1,103 @@
+/* /styles/tokens/colors.css
+ * Color token variables for the application.
+ * These variables create a consistent color palette
+ * that components can reference.
+ */
+
+:root {
+    /* Primary brand colors */
+    --color-primary: #1890ff;
+    --color-primary-light: #40a9ff;
+    --color-primary-dark: #096dd9;
+    --color-primary-rgb: 24, 144, 255; /* For rgba() usage */
+
+    /* Secondary & accent colors */
+    --color-secondary: #52c41a;
+    --color-secondary-light: #73d13d;
+    --color-secondary-dark: #389e0d;
+
+    --color-accent: #722ed1;
+    --color-accent-light: #9254de;
+    --color-accent-dark: #531dab;
+
+    /* Semantic status colors */
+    --color-success: #52c41a;
+    --color-warning: #faad14;
+    --color-error: #ff4d4f;
+    --color-info: #1890ff;
+
+    /* Neutrals - for text, backgrounds, borders */
+    --color-text-primary: #333333;
+    --color-text-secondary: #666666;
+    --color-text-tertiary: #999999;
+    --color-text-disabled: #cccccc;
+
+    --color-bg-primary: #ffffff;
+    --color-bg-secondary: #f5f5f5;
+    --color-bg-tertiary: #f0f0f0;
+    --color-bg-disabled: #fafafa;
+
+    --color-border: #d9d9d9;
+    --color-border-light: #f0f0f0;
+    --color-border-dark: #b9b9b9;
+    --color-border-hover: #40a9ff;
+
+    /* Overlay colors */
+    --color-overlay: rgba(0, 0, 0, 0.45);
+    --color-overlay-light: rgba(0, 0, 0, 0.2);
+    --color-overlay-dark: rgba(0, 0, 0, 0.65);
+
+    /* Shadow colors */
+    --shadow-color: rgba(0, 0, 0, 0.15);
+
+    /* Form-specific colors */
+    --color-input-bg: #ffffff;
+    --color-input-border: #d9d9d9;
+    --color-input-border-hover: #40a9ff;
+    --color-input-border-focus: #1890ff;
+    --color-input-placeholder: #cccccc;
+
+    /* Button-specific colors */
+    --button-primary-bg: var(--color-primary);
+    --button-primary-text: #ffffff;
+    --button-primary-hover-bg: var(--color-primary-light);
+    --button-primary-active-bg: var(--color-primary-dark);
+
+    --button-secondary-bg: #ffffff;
+    --button-secondary-text: var(--color-text-primary);
+    --button-secondary-border: var(--color-border);
+    --button-secondary-hover-bg: #fafafa;
+    --button-secondary-hover-border: var(--color-primary);
+
+    --button-danger-bg: var(--color-error);
+    --button-danger-text: #ffffff;
+    --button-danger-hover-bg: #ff7875;
+    --button-danger-active-bg: #d9363e;
+
+    /* Link colors */
+    --color-link: var(--color-primary);
+    --color-link-hover: var(--color-primary-light);
+    --color-link-active: var(--color-primary-dark);
+    --color-link-visited: #722ed1;
+}
+
+/* Dark theme variables - uncomment and customize when needed
+:root.dark-theme {
+  --color-text-primary: #f5f5f5;
+  --color-text-secondary: #d9d9d9;
+  --color-text-tertiary: #a6a6a6;
+  --color-text-disabled: #737373;
+
+  --color-bg-primary: #1f1f1f;
+  --color-bg-secondary: #2d2d2d;
+  --color-bg-tertiary: #3a3a3a;
+  --color-bg-disabled: #444444;
+
+  --color-border: #434343;
+  --color-border-light: #5a5a5a;
+  --color-border-dark: #303030;
+
+  --color-input-bg: #2d2d2d;
+  --color-input-border: #434343;
+}
+*/

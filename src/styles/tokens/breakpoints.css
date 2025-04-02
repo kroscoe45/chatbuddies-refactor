@@ -1,0 +1,63 @@
+/* /styles/tokens/breakpoints.css
+ * Breakpoint variables for responsive design.
+ * Define standard breakpoints for consistent media queries.
+ */
+
+:root {
+    /* Breakpoint values (screen widths) */
+    --breakpoint-xs: 480px; /* Extra small devices (phones) */
+    --breakpoint-sm: 576px; /* Small devices (large phones) */
+    --breakpoint-md: 768px; /* Medium devices (tablets) */
+    --breakpoint-lg: 992px; /* Large devices (desktops) */
+    --breakpoint-xl: 1200px; /* Extra large devices (large desktops) */
+    --breakpoint-2xl: 1400px; /* Extra extra large devices */
+}
+
+/*
+ * Usage example:
+ *
+ * @media (min-width: var(--breakpoint-md)) {
+ *   .container {
+ *     max-width: 720px;
+ *   }
+ * }
+ *
+ * Note: CSS variables in media queries are not supported in all browsers.
+ * For maximum compatibility, consider using these values directly in your media queries.
+ */
+
+/* Media query mixins (via CSS custom properties) */
+@custom-media --viewport-xs (max-width: 479px);
+@custom-media --viewport-sm (min-width: 480px) and (max-width: 575px);
+@custom-media --viewport-md (min-width: 576px) and (max-width: 767px);
+@custom-media --viewport-lg (min-width: 768px) and (max-width: 991px);
+@custom-media --viewport-xl (min-width: 992px) and (max-width: 1199px);
+@custom-media --viewport-2xl (min-width: 1200px);
+
+/* Mobile-first media queries */
+@custom-media --xs-up (min-width: 0);
+@custom-media --sm-up (min-width: 480px);
+@custom-media --md-up (min-width: 576px);
+@custom-media --lg-up (min-width: 768px);
+@custom-media --xl-up (min-width: 992px);
+@custom-media --2xl-up (min-width: 1200px);
+
+/* Desktop-first media queries */
+@custom-media --2xl-down (max-width: 1400px);
+@custom-media --xl-down (max-width: 1199px);
+@custom-media --lg-down (max-width: 991px);
+@custom-media --md-down (max-width: 767px);
+@custom-media --sm-down (max-width: 575px);
+@custom-media --xs-down (max-width: 479px);
+
+/*
+ * Container widths
+ * These values define how wide container elements should be at different breakpoints
+ */
+:root {
+    --container-max-width-sm: 540px;
+    --container-max-width-md: 720px;
+    --container-max-width-lg: 960px;
+    --container-max-width-xl: 1140px;
+    --container-max-width-2xl: 1320px;
+}

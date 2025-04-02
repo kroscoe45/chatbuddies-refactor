@@ -1,35 +1,27 @@
 #!/bin/bash
-
 # extract-ts-files.sh
 # Purpose: Extract TypeScript project files for AI code assistant upload
 # This script will copy files to a flat directory structure with paths encoded in filenames
-# Example: 'server/types/index.ts' becomes '../upload/server_types_index.ts'
-
+# Example: 'server/types/api.ts' becomes '../upload/server_types_api.ts'
 set -e  # Exit on error
-
 # Check if a project directory is provided
 if [ -z "$1" ]; then
   echo "Error: No project directory specified."
   echo "Usage: ./extract-ts-files.sh <project_root_directory>"
   exit 1
 fi
-
 PROJECT_ROOT=$(realpath "$1")
 UPLOAD_DIR="../upload"
-
 # Check if project directory exists
 if [ ! -d "$PROJECT_ROOT" ]; then
   echo "Error: Project directory '$PROJECT_ROOT' does not exist."
   exit 1
 fi
-
 # Clear and recreate upload directory
 rm -rf "$UPLOAD_DIR"
 mkdir -p "$UPLOAD_DIR"
-
 echo "Extracting files from: $PROJECT_ROOT"
 echo "Files will be saved with flattened paths to: $UPLOAD_DIR"
-
 # Define file types to include
 FILE_TYPES=(
   "*.ts"
@@ -41,7 +33,6 @@ FILE_TYPES=(
   "*.css"
   "*.html"
 )
-
 # Define directories to exclude
 EXCLUDE_DIRS=(
   "node_modules"
@@ -50,7 +41,11 @@ EXCLUDE_DIRS=(
   "coverage"
   ".git"
 )
-
+# Define files to exclude
+EXCLUDE_FILES=(
+  "index.ts"
+  "package-lock.json"
+)
 # Process files
 cd "$PROJECT_ROOT"
 for TYPE in "${FILE_TYPES[@]}"; do
@@ -67,6 +62,17 @@ for TYPE in "${FILE_TYPES[@]}"; do
       fi
     done
     
+    # Skip excluded files
+    if [ "$SKIP" = false ]; then
+      BASENAME=$(basename "$REL_PATH")
+      for EXCLUDE_FILE in "${EXCLUDE_FILES[@]}"; do
+        if [[ "$BASENAME" == "$EXCLUDE_FILE" ]]; then
+          SKIP=true
+          break
+        fi
+      done
+    fi
+    
     if [ "$SKIP" = true ]; then
       continue
     fi
@@ -80,9 +86,7 @@ for TYPE in "${FILE_TYPES[@]}"; do
     echo "Copied: $REL_PATH → $NEW_FILENAME"
   done
 done
-
 # Count how many files were extracted
 FILE_COUNT=$(find "$UPLOAD_DIR" -type f | wc -l)
-
 echo "Done! Extracted $FILE_COUNT files to $UPLOAD_DIR"
 echo "You can now upload individual files to your AI assistant."
